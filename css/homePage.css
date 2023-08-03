@@ -1,0 +1,347 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing:  border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* set the color  */
+:root{
+    --blue : #2fa8e4;
+    --white : #fff;
+    --white2 : #f5f5f5;
+    --black1 : #222;
+    --grey: #999;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+}
+.navigation{
+    position: fixed;
+    width : 300px;
+    height: 100%;
+    background-color: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+/* active when we click tootgle button */
+.navigation.active{
+    width:80px  ;
+}
+.navigation ul{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background-color: var(--white);
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color : var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+    color: var(--blue);
+}
+.navigation ul li a .icon{
+    position: relative;
+    display : block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 80px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon{
+    font-size: 1.75em;
+}
+.navigation ul li a .title{
+    position: relative;
+    display:block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: normal;
+}
+
+/* round border outside the box */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width:50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    /* pointer-events: none; */
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width:50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    /* pointer-events: none; */
+}
+
+.HomeMain{
+    position: absolute;
+    width: calc(100% - 300px);
+    left:300px;
+    min-height: 100vh;
+    background-color: var(--white);
+    transition: 0.5s;
+}
+.HomeMain.active{
+    width: calc(100% - 80px);
+    left:80px;
+}
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding : 0 10px;
+}
+.user{
+    position: relative;
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.user img{
+    position: absolute;
+    top : 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+.search{
+    position: relative;
+    width: 400px;
+    margin:0 10px;
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline:none;
+    border: 1px solid var(--grey);
+}
+.search label ion-icon{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+/* card-box in home-page */
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+.cardBox .card{
+    position: relative;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.cardBox .card .numbers{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--blue);
+}
+.cardBox .card .cardName{
+    color: var(--grey);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.cardBox .card .iconBox{
+    font-size: 3.5em;
+    color: var(--grey);
+}
+.cardBox .card:hover{
+    background-color: var(--blue);
+}
+.cardBox .card:hover .numbers ,
+.cardBox .card:hover .iconBox ,
+.cardBox .card:hover .cardName{
+    color: var(--white);
+}
+.details{
+    position: relative;
+    width: 155%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.details .recentOrders{      /* change this section  */
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background-color: var(--white);
+    padding: 20px;
+    box-shadow: 0px 7px 25px rgba(0, 0, 0,0.08) ;
+    border-radius: 20px;
+}
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2{
+    font-weight: 500;
+    color: var(--blue);
+}
+.Entry-option{
+    margin-right: 50px;
+    padding: 10px;
+}
+.view-link {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+    margin-right: -6px; 
+}
+
+.add-link {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+/* table-section  */
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.details table th,
+.details table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.details table th {
+    background-color: var(--white2);
+    color: #222;
+    font-weight: 600;
+}
+
+.details table tr:nth-child(even) {
+    background-color: var(--white2);
+}
+
+.details .recentEntry table tr:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.details .recentEntry table tr td{
+    padding: 10px;
+}
+.details .recentEntry table tr td:last-child{
+    text-align: end;
+}
+.status.Studying{
+    padding: 2px 4px;
+    background-color: greenyellow;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.status.Leave{
+    padding: 2px 4px;
+    background-color: rgb(235, 16, 16);
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.status.Transfer{
+    padding: 2px 4px;
+    background-color: rgba(80, 69, 236, 0.925);
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}

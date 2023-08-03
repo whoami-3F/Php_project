@@ -1,0 +1,213 @@
+html, body {
+  font-family: Arial;
+  margin: 0; 
+  height: 100%; 
+  overflow: hidden;
+  background-color: #2fa8e4;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.Main_form {
+  width: 400px;
+  height: 330px;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  background: white;
+  color: #333333;
+  position: absolute;
+}
+
+#index_form{
+  height: 400px;
+}
+
+.userInput {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.email-section,.password-section,.username-section{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.email-section input,.password-section input,.username-section input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+}
+
+.password-section img {
+  width: 35px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #16385e;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+#userLogin {
+  display: block;
+  width: 100%;
+}
+
+#userRegister {
+  display: block;
+}
+
+#forgetLink {
+  color: black;
+  text-decoration: none;
+}
+
+.errorMsg {
+  color: pink;
+}
+
+.Outer-form-text {
+  width: 500px;
+  padding: 40px;
+}
+
+.Outer-form-text h1 {
+  font-weight: 900;
+  color:#16385e;
+}
+
+.Outer-form-text span {
+  font-weight: 500;
+  color: black;
+}
+
+/* when screen is full */
+@media (min-width: 1010px) {
+  .Main_form {
+    left: 5%; 
+    top: 30%; 
+  }
+  .Outer-form-text{
+    position: absolute;
+    top: 37%;
+    left: 46%;
+    text-align: center;
+  }
+}
+
+/*  when screen is decrease */
+@media (max-width: 1010px) {
+  .Main_form {
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+  }
+  .Outer-form-text {
+    position: absolute;
+    margin-top: 10px;
+    top: 29%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    text-align: center;
+    width: 50%;
+  }
+  .Outer-form-text h1{
+    font-size:29px;
+  }
+}
+
+/* Home page */
+/* .Main-header{
+  margin: 0;
+  top: 0;
+  background-color: red;
+} */
+
+
+#table-section {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+  background-color: rebeccapurple;
+}
+
+#table-section td, #table-section th {
+  padding: 8px;
+}
+
+#table-section td{
+  background-color: white;
+}
+
+#table-section a{
+  text-decoration: none;
+}
+#table-section th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #16385e;
+  color: white;
+}
+
+.table-container table tbody tr:hover {
+  background-color: #0cff0c;
+}
+
+#addUser-btn {
+  width: 10%;
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+#addUser-btn a{
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.table-container{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+/* update-section */
+#back-btn a{
+  text-decoration: none;
+  color: white;
+}
+
+/* student-details */
+#addStudent-btn-1,#addStudent-btn-2{
+  width: 20%;
+  margin-left: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+#addStudent-btn-1 a,#addStudent-btn-2 a{
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
